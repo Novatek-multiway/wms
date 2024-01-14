@@ -1,5 +1,5 @@
 
-FROM node:16.20.0 as builder
+FROM registry.cn-shenzhen.aliyuncs.com/mwcloud/node:18.13.0 as build
 
 # ENV PROJECT_ENV production
 # ENV NODE_ENV production
@@ -11,8 +11,8 @@ COPY . .
 # ADD package.json /source
 
 RUN npm install pnpm -g 
-RUN pnpm config set registry https://registry.npm.taobao.org
-RUN npm run bootstrap && npm run build
+
+RUN pnpm bootstrap && pnpm build
 
 COPY . /source
 
