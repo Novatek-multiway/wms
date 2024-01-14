@@ -1,0 +1,50 @@
+.location-info-wrap {
+    max-height: 70vh;
+    overflow: auto;
+}
+
+.inventory-list li {
+    border-top: 1px dotted;
+    padding-top: 15px;
+}
+
+.legend-wrap {
+    display: flex;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    font-size: 12px;
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+
+        span:first-child {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+    }
+}
+
+.switch-menu-wrap {
+    position: fixed;
+    padding: 6px 12px;
+    border-radius: 5px;
+    bottom: 25px;
+    right: 25px;
+    z-index: 10;
+    background: #fff;
+    display: flex;
+
+    .menu-item {
+        padding: 4px 10px;
+        cursor: pointer;
+        transition: 0.4s;
+
+        &:hover,
+        &.active {
+            background: rgba(146, 250, 215, 0.26);
+        }
+    }
+}

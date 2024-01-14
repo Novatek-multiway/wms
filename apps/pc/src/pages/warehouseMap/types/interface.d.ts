@@ -1,0 +1,4 @@
+interface IMaterialStyle {
+	color: any;
+	//
+}

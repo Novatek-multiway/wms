@@ -1,0 +1,9 @@
+.home {
+  .gridTitle {
+    :global(.rv-grid-item__text) {
+      color: #000;
+      margin-top: 4px;
+      font-size: 16px;
+    }
+  }
+}

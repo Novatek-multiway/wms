@@ -1,0 +1,13 @@
+import { useState, useEffect, useMemo, FC } from 'react';
+import type { API } from 'apis';
+
+const {{ name }}: FC = () => {
+  return (
+    <div className="{{name}}">
+      {{ name }}
+    </div>
+  );
+}
+
+export default {{ name }};
+

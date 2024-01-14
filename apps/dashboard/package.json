@@ -1,0 +1,40 @@
+{
+  "name": "dashboard",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint \"src/**/*.ts\"",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf build"
+  },
+  "dependencies": {
+    "antd": "^5.0.1",
+    "@ant-design/icons": "^4.8.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1",
+    "ui": "workspace:*",
+    "apis": "workspace:*",
+    "warehousemap": "workspace:*",
+    "hooks": "workspace:*",
+    "store": "workspace:*",
+    "md5": "^2.3.0",
+    "ahooks": "^3.7.7",
+    "react-spring": "^9.7.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^2.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.3",
+    "vite-plugin-compression": "^0.5.1",
+    "tailwind-config": "workspace:*",
+    "autoprefixer": "^10.4.14"
+  }
+}

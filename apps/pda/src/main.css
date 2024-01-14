@@ -1,0 +1,90 @@
+/*
+  START - CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  font-size: 24px;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #f6f8fc;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root {
+  isolation: isolate;
+  height: 100%;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --rv-font-size-xs: 12px;
+  --rv-font-size-sm: 14px;
+  --rv-font-size-md: 16px;
+  --rv-font-size-lg: 18px;
+  --rv-font-weight-bold: 500;
+  --rv-line-height-xs: 16px;
+  --rv-line-height-sm: 20px;
+  --rv-line-height-md: 22px;
+  --rv-line-height-lg: 24px;
+}
+
+.rv-input svg {
+  font-size: 24px;
+}
+
+/* END - CSS Reset */

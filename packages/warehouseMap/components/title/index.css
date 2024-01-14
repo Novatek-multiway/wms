@@ -1,0 +1,323 @@
+.dashboard-bg {
+  position: relative;
+  background: url('/wms_dashboard/topBg.png');
+  width: 1920px;
+  height: 100px;
+  animation: topBgAnimation 3.04s steps(1) infinite;
+  z-index: 10;
+}
+
+@keyframes topBgAnimation {
+  0% {
+    background-position: 0px 0px;
+  }
+  1.33% {
+    background-position: -1920px 0px;
+  }
+  2.67% {
+    background-position: 0px -100px;
+  }
+  4.00% {
+    background-position: -1920px -100px;
+  }
+  5.33% {
+    background-position: 0px -200px;
+  }
+  6.67% {
+    background-position: -1920px -200px;
+  }
+  8.00% {
+    background-position: 0px -300px;
+  }
+  9.33% {
+    background-position: -1920px -300px;
+  }
+  10.67% {
+    background-position: 0px -400px;
+  }
+  12.00% {
+    background-position: -1920px -400px;
+  }
+  13.33% {
+    background-position: 0px -500px;
+  }
+  14.67% {
+    background-position: -1920px -500px;
+  }
+  16.00% {
+    background-position: 0px -600px;
+  }
+  17.33% {
+    background-position: -1920px -600px;
+  }
+  18.67% {
+    background-position: 0px -700px;
+  }
+  20.00% {
+    background-position: -1920px -700px;
+  }
+  21.33% {
+    background-position: 0px -800px;
+  }
+  22.67% {
+    background-position: -1920px -800px;
+  }
+  24.00% {
+    background-position: 0px -900px;
+  }
+  25.33% {
+    background-position: -1920px -900px;
+  }
+  26.67% {
+    background-position: 0px -1000px;
+  }
+  28.00% {
+    background-position: -1920px -1000px;
+  }
+  29.33% {
+    background-position: 0px -1100px;
+  }
+  30.67% {
+    background-position: -1920px -1100px;
+  }
+  32.00% {
+    background-position: 0px -1200px;
+  }
+  33.33% {
+    background-position: -1920px -1200px;
+  }
+  34.67% {
+    background-position: 0px -1300px;
+  }
+  36.00% {
+    background-position: -1920px -1300px;
+  }
+  37.33% {
+    background-position: 0px -1400px;
+  }
+  38.67% {
+    background-position: -1920px -1400px;
+  }
+  40.00% {
+    background-position: 0px -1500px;
+  }
+  41.33% {
+    background-position: -1920px -1500px;
+  }
+  42.67% {
+    background-position: 0px -1600px;
+  }
+  44.00% {
+    background-position: -1920px -1600px;
+  }
+  45.33% {
+    background-position: 0px -1700px;
+  }
+  46.67% {
+    background-position: -1920px -1700px;
+  }
+  48.00% {
+    background-position: 0px -1800px;
+  }
+  49.33% {
+    background-position: -1920px -1800px;
+  }
+  50.67% {
+    background-position: 0px -1900px;
+  }
+  52.00% {
+    background-position: -1920px -1900px;
+  }
+  53.33% {
+    background-position: 0px -2000px;
+  }
+  54.67% {
+    background-position: -1920px -2000px;
+  }
+  56.00% {
+    background-position: 0px -2100px;
+  }
+  57.33% {
+    background-position: -1920px -2100px;
+  }
+  58.67% {
+    background-position: 0px -2200px;
+  }
+  60.00% {
+    background-position: -1920px -2200px;
+  }
+  61.33% {
+    background-position: 0px -2300px;
+  }
+  62.67% {
+    background-position: -1920px -2300px;
+  }
+  64.00% {
+    background-position: 0px -2400px;
+  }
+  65.33% {
+    background-position: -1920px -2400px;
+  }
+  66.67% {
+    background-position: 0px -2500px;
+  }
+  68.00% {
+    background-position: -1920px -2500px;
+  }
+  69.33% {
+    background-position: 0px -2600px;
+  }
+  70.67% {
+    background-position: -1920px -2600px;
+  }
+  72.00% {
+    background-position: 0px -2700px;
+  }
+  73.33% {
+    background-position: -1920px -2700px;
+  }
+  74.67% {
+    background-position: 0px -2800px;
+  }
+  76.00% {
+    background-position: -1920px -2800px;
+  }
+  77.33% {
+    background-position: 0px -2900px;
+  }
+  78.67% {
+    background-position: -1920px -2900px;
+  }
+  80.00% {
+    background-position: 0px -3000px;
+  }
+  81.33% {
+    background-position: -1920px -3000px;
+  }
+  82.67% {
+    background-position: 0px -3100px;
+  }
+  84.00% {
+    background-position: -1920px -3100px;
+  }
+  85.33% {
+    background-position: 0px -3200px;
+  }
+  86.67% {
+    background-position: -1920px -3200px;
+  }
+  88.00% {
+    background-position: 0px -3300px;
+  }
+  89.33% {
+    background-position: -1920px -3300px;
+  }
+  90.67% {
+    background-position: 0px -3400px;
+  }
+  92.00% {
+    background-position: -1920px -3400px;
+  }
+  93.33% {
+    background-position: 0px -3500px;
+  }
+  94.67% {
+    background-position: -1920px -3500px;
+  }
+  96.00% {
+    background-position: 0px -3600px;
+  }
+  97.33% {
+    background-position: -1920px -3600px;
+  }
+  98.67% {
+    background-position: 0px -3700px;
+  }
+  100.00% {
+    background-position: -1920px -3700px;
+  }
+}
+
+.dashboard-title {
+  position: absolute;
+  width: 700px;
+  height: 60px;
+  left: 50%;
+  font-size: 32px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  transform: translateX(-50%);
+  top: 12px;
+}
+
+.dashboard-left-tips {
+  position: absolute;
+  top: 8px;
+  color: #d3f2ff;
+  font-size: 16px;
+  font-weight: bold;
+  left: 275px;
+}
+.dashboard-left-tips span {
+  color: #66ddf9;
+  font-size: 30px;
+}
+
+.dashboard-right-tips {
+  position: absolute;
+  top: 8px;
+  color: #d3f2ff;
+  font-size: 16px;
+  font-weight: bold;
+  right: 275px;
+}
+
+.dashboard-right-tips span {
+  color: #66ddf9;
+  font-size: 30px;
+}
+
+.left-top-box {
+  position: absolute;
+  top: 90px;
+  left: 20px;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  background: #2653a9c2;
+  z-index: 11;
+}
+
+.left-bottom-box {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  background: #2653a9c2;
+  z-index: 11;
+}
+
+.right-top-box {
+  position: absolute;
+  top: 90px;
+  right: 20px;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  background: #2653a9c2;
+  z-index: 11;
+}
+
+.right-bottom-box {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  background: #2653a9c2;
+  z-index: 11;
+}

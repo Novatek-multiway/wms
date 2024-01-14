@@ -1,0 +1,61 @@
+.dashboard {
+  .summary {
+    @apply box-border border-2 border-purple-100 border-solid flex flex-row items-center fixed bottom-0 justify-between bg-slate-100 w-full p-1;
+    :global(.ant-descriptions-row > td) {
+      padding: 6px 0;
+    }
+    :global(.ant-badge-status-text) {
+      margin: 0;
+    }
+    .operator {
+      :global(.ant-descriptions .ant-descriptions-item-label::after) {
+        display: none;
+      }
+    }
+  }
+
+  .popover {
+    background-clip: padding-box;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+      0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    @apply rounded-lg p-1 bg-white absolute transition-opacity z-50 w-24;
+
+    .operationItem {
+      @apply cursor-pointer p-1;
+    }
+  }
+
+  .statusRadioGroup {
+    @apply fixed top-[55px] bottom-9 h-[360px] bg-stone-100 opacity-90 overflow-y-auto;
+
+    :global(.ant-radio-button-wrapper) {
+      padding: 0 2px;
+    }
+
+    :global(.ant-badge-status-text) {
+      margin-left: 4px;
+    }
+
+    .status {
+      @apply flex flex-row items-center py-1 my-1;
+      border: 1px solid transparent;
+      &.active {
+        @apply relative;
+        background-color: #e6f7ff;
+        border-color: #69c0ff;
+        &::after {
+          content: '';
+          top: 2px;
+          right: 2px;
+          width: 10px;
+          height: 10px;
+          border: 5px solid var(--ay-primary-color);
+          border-left: 5px solid transparent;
+          border-bottom: 5px solid transparent;
+          border-top-right-radius: 2px;
+          position: absolute;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.combine {
+  .radio {
+    :global(.rv-radio__label) {
+      margin: 0;
+    }
+    :global(.rv-radio--horizontal) {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'iconfont'; /* Project id 4016245 */
+  src: url('iconfont.woff2?t=1681460173209') format('woff2'),
+    url('iconfont.woff?t=1681460173209') format('woff'),
+    url('iconfont.ttf?t=1681460173209') format('truetype');
+}
+
+.iconfont {
+  font-family: 'iconfont' !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home:before {
+  content: '\ecb7';
+}
+
+.icon-shipmentBusiness:before {
+  content: '\e6d5';
+}
+
+.icon-receivingBusiness:before {
+  content: '\e66a';
+}
+
+.icon-repertory:before {
+  content: '\e604';
+}
+
+.icon-inventory:before {
+  content: '\e646';
+}
+
+.icon-task:before {
+  content: '\e65d';
+}

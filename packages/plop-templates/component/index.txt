@@ -1,0 +1,15 @@
+import { useState, useEffect, useMemo, FC } from 'react';
+
+interface IProps {
+  // 在这里定义你的组件属性
+}
+
+const {{ name }}: FC<IProps> = ({ /* 这里传入你的属性 */ }) => {
+  return (
+    <div className="{{name}}">
+      {{ name }}
+    </div>
+  );
+}
+
+export default {{ name }};

@@ -1,0 +1,8 @@
+.pick {
+  .footer {
+    @apply mt-2 flex items-center justify-end;
+    .btn {
+      @apply ml-1;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+node_modules/
+target/
+.next/
+build/
+dist/
+
+crates/*/tests/**
+
+/apps/pda/plop-templates/**
