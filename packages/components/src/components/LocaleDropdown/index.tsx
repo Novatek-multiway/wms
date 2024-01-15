@@ -21,7 +21,7 @@ const LocaleDropdown: React.FC = () => {
 
   const languageMenu: MenuProps = {
     items: [
-      // { label: "🇨🇳 简体中文", key: "zh_CN" },
+      { label: '🇨🇳 简体中文', key: 'zh_CN' },
       { label: '🇬🇧 English', key: 'en_US' },
       // { label: "🇯🇵 にほんご", key: "ja_JP" },
       { label: '🇰🇷 한글', key: 'ko_KR' },
