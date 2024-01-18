@@ -39,7 +39,7 @@ export default function DashBoard() {
   const [statusVisible, setStatusVisible] = useState(true);
   const [navigatorVisible, setNavigatorVisible] = useState(false);
   const [shouldDisplayText, setShouldDisplayText] = useState(false);
-  const [konvaTitle, setKonvaTitle] = useState<string>('总览-1层');
+  const [konvaTitle, setKonvaTitle] = useState<string>(t('总览-1层') as string);
 
   const layerRef = useRef<ILayerRef>(null);
 
@@ -191,9 +191,9 @@ export default function DashBoard() {
           {/* <li className={styles.operationItem}>
             <EmptyTrayOutApplyDialog locationId={locationId} refresh={initData} />
           </li> */}
-          {/* <li className={styles.operationItem}>
+          <li className={styles.operationItem}>
             <BindingDialog locationId={locationId} refresh={initData} />
-          </li> */}
+          </li>
           <li className={styles.operationItem}>
             {/* <UnbindingDialog locationId={locationId} refresh={initData} /> */}
             <UnbindingModal locationId={locationId} refresh={initData} />

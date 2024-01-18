@@ -224,4 +224,5 @@ export default {
   供应商CD: 'Supplier CD',
   '确定执行？': 'Are you sure to execute ?',
   '解盘成功！': 'Unpalletizing successful!',
+  '总览-1层': 'Overview - 1 Layer',
 };
