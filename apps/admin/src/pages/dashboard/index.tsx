@@ -1,6 +1,6 @@
 import { useDebounceFn, useSize, useWebSocket } from 'ahooks';
-import { Divider, FloatButton, Switch, Tree } from 'antd';
-import { Get2DTileData, GetLayerNavigation, GetSummary } from 'apis';
+import { Divider, FloatButton, message, Switch, Tree } from 'antd';
+import { Get2DTileData, GetLayerNavigation, GetSummary, SetLocationFull } from 'apis';
 import cx from 'classnames';
 import { shallowEqual, useAppDispatch, useAppSelector } from 'hooks';
 import { isEmpty } from 'lodash';
@@ -191,8 +191,19 @@ export default function DashBoard() {
           {/* <li className={styles.operationItem}>
             <EmptyTrayOutApplyDialog locationId={locationId} refresh={initData} />
           </li> */}
-          <li className={styles.operationItem}>
+          {/* <li className={styles.operationItem}>
             <BindingDialog locationId={locationId} refresh={initData} />
+          </li> */}
+          <li
+            className={styles.operationItem}
+            onClick={() => {
+              SetLocationFull({ id: locationId }).then((res) => {
+                const { resultData } = res;
+                resultData && message.success(t('锁定成功'));
+              });
+            }}
+          >
+            {t('锁定')}
           </li>
           <li className={styles.operationItem}>
             {/* <UnbindingDialog locationId={locationId} refresh={initData} /> */}

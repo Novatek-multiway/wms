@@ -132,13 +132,13 @@ function InStockApplyDialog({ locationId, refresh }: IProps) {
               scannerKey={SCANNER_DASHBOARD_INSTOCK_CONTAINER}
             />
           </Form.Item> */}
-          <Form.Item
+          {/* <Form.Item
             label={t('物料编号')}
             name="matreialCode"
             rules={[{ required: true, message: t('必填') }]}
           >
             <Select options={materialOptions} placeholder="请输入物料编号" />
-          </Form.Item>
+          </Form.Item> */}
         </Form>
       </MwDialog>
     </>

@@ -28,7 +28,7 @@ export default defineConfig((config) => {
       proxy: {
         // 请求代理地址(仅开发环境有效)
         '/api': {
-          target: 'http://192.168.2.102:8080/api',
+          target: ' http://192.168.1.240:23065/api',
           // target: 'http://120.79.8.215:7239/',
           changeOrigin: true,
           secure: true, // 如果是https接口，需要配置这个参数
@@ -36,7 +36,7 @@ export default defineConfig((config) => {
           rewrite: (path) => path.replace(/^\/api/, ''),
         },
         '/pad': {
-          target: 'http://192.168.2.102:8080/',
+          target: ' http://192.168.1.240:23065/',
           // target: 'http://120.79.8.215:7239/',
           changeOrigin: true,
           secure: true, // 如果是https接口，需要配置这个参数

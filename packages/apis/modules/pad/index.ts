@@ -2,6 +2,8 @@ import { get, post } from '../../request';
 import type { API } from '../typings';
 
 export const GetSummary = () => get<API.WarehouseSummaryDTO>('/pad/Index/GetSummary');
+export const SetLocationFull = (params) =>
+  get<API.WarehouseSummaryDTO>('pad/Index/SetLocationFull', params);
 
 export const GetLayerNavigation = () =>
   get<API.LayerNavigationDTO[]>('/pad/Index/GetLayerNavigation');
