@@ -208,7 +208,8 @@ export default function DashBoard() {
             onClick={() => {
               SetLocationFull({ id: locationId }).then((res) => {
                 const { resultData } = res;
-                resultData && message.success(t('锁定成功'));
+                resultData && msg.success(t('锁定成功'));
+                run2D();
               });
             }}
           >
