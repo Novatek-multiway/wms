@@ -1,5 +1,5 @@
 import { useDebounceFn, useSize, useWebSocket } from 'ahooks';
-import { Divider, FloatButton, message, Switch, Tree } from 'antd';
+import { Divider, FloatButton, message as msg, Switch, Tree } from 'antd';
 import { Get2DTileData, GetLayerNavigation, GetSummary, SetLocationFull } from 'apis';
 import cx from 'classnames';
 import { shallowEqual, useAppDispatch, useAppSelector } from 'hooks';
@@ -73,6 +73,15 @@ export default function DashBoard() {
       const messageType = new_data.MessageType as 'SummaryNotify' | 'WarehouseMapNotify';
       if (APIList.has(messageType)) {
         APIList.get(messageType)?.();
+      }
+    },
+  });
+  useWebSocket(`ws://${import.meta.env.VITE_APP_BASE_API}/notify?client=${CLIENT}&key=${timer}`, {
+    onMessage(message, instance) {
+      const data = message?.data ?? '{}';
+      const new_data = JSON.parse(data);
+      if (JSON.parse(new_data.Message)[0]) {
+        msg.error(JSON.parse(new_data.Message)[0].ErrorMessage);
       }
     },
   });
@@ -244,7 +253,7 @@ export default function DashBoard() {
         />
       </div>
 
-      <animated.div className={styles.statusRadioGroup} style={statusAnimation}>
+      {/* <animated.div className={styles.statusRadioGroup} style={statusAnimation}>
         {locationStatusOptions.map((status) => (
           <div
             className={cx([styles.status, activeStatus?.[status.value] ? styles.active : ''])}
@@ -271,7 +280,7 @@ export default function DashBoard() {
             unCheckedChildren={t('隐藏')}
           />
         </div>
-      </animated.div>
+      </animated.div> */}
 
       <div className={styles.summary}>
         <ProgressBar
