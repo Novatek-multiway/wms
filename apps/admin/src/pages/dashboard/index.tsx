@@ -84,7 +84,7 @@ export default function DashBoard() {
       if (msgList > 0) {
         msgList.forEach((item: any) => {
           notification.error({
-            message: '车辆ID：' + item.id,
+            message: '车辆ID：' + item.Id,
             description: item.Message,
             duration: null,
           });
