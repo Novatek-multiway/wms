@@ -1,5 +1,5 @@
 import { useDebounceFn, useSize, useWebSocket } from 'ahooks';
-import { Divider, FloatButton, message as msg, Switch, Tree } from 'antd';
+import { Divider, FloatButton, message as msg, Switch, Tree, notification } from 'antd';
 import { Get2DTileData, GetLayerNavigation, GetSummary, SetLocationFull } from 'apis';
 import cx from 'classnames';
 import { shallowEqual, useAppDispatch, useAppSelector } from 'hooks';
@@ -80,8 +80,15 @@ export default function DashBoard() {
     onMessage(message, instance) {
       const data = message?.data ?? '{}';
       const new_data = JSON.parse(data);
-      if (JSON.parse(new_data.Message)[0]) {
-        msg.error(JSON.parse(new_data.Message)[0].ErrorMessage);
+      const msgList = JSON.parse(new_data.Message);
+      if (msgList > 0) {
+        msgList.forEach((item: any) => {
+          notification.error({
+            message: '车辆ID：' + item.id,
+            description: item.Message,
+            duration: null,
+          });
+        });
       }
     },
   });
