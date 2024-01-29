@@ -7,8 +7,6 @@ interface IProps {
 }
 
 function LocationGroup({ locationItem }: IProps) {
-  console.log(locationItem);
-
   return (
     <Group {...locationItem.group}>
       <Rect {...locationItem.rect}></Rect>

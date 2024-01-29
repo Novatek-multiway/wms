@@ -80,14 +80,16 @@ export default function DashBoard() {
       const data = message?.data ?? '{}';
       const new_data = JSON.parse(data);
       const msgList = JSON.parse(new_data.Message);
+
       notification.destroy();
       if (msgList.length > 0) {
         msgList.forEach((item: any) => {
-          notification.error({
-            message: '车辆ID：' + item.Id,
-            description: item.ErrorMessage,
-            duration: null,
-          });
+          item.ErrorMessage &&
+            notification.error({
+              message: '车辆ID：' + item.Id,
+              description: item.ErrorMessage,
+              duration: null,
+            });
         });
       }
       const messageType = new_data.MessageType as 'SummaryNotify' | 'WarehouseMapNotify';
