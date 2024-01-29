@@ -33,6 +33,7 @@ interface ILocationItem extends API.OutputLocationTileDTO {
   group: Konva.GroupConfig;
   rowText: Konva.TextConfig | null;
   colText: Konva.TextConfig | null;
+  locationText: Konva.TextConfig | null;
 }
 
 type ILocation = ILocationItem | false;

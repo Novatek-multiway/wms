@@ -7,11 +7,14 @@ interface IProps {
 }
 
 function LocationGroup({ locationItem }: IProps) {
+  console.log(locationItem);
+
   return (
     <Group {...locationItem.group}>
       <Rect {...locationItem.rect}></Rect>
       {locationItem.rowText && <Text {...locationItem.rowText}></Text>}
       {locationItem.colText && <Text {...locationItem.colText}></Text>}
+      {locationItem.locationText && <Text {...locationItem.locationText}></Text>}
     </Group>
   );
 }

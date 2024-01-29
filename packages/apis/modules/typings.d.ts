@@ -1059,6 +1059,8 @@ export declare namespace API {
     fromLocationCode?: string;
     /** 托盘条码,可空,如果不传值则不校验起始位置上的托盘条码 */
     containerCode?: string;
+    locationId?: string;
+    containerTypeId?: string;
   };
 
   type getCombineInStockParams = {
@@ -1067,7 +1069,6 @@ export declare namespace API {
     /** 物料编码 */
     matreialCode: string;
   };
-
 
   type getApiInvoiceHeaderManualFinishParams = {
     id?: number;
@@ -6854,5 +6855,5 @@ export declare namespace API {
     weight: string;
     supplierCD: string;
     fromSys: string;
-  }
+  };
 }

@@ -4,7 +4,8 @@ import type { API } from '../typings';
 export const GetSummary = () => get<API.WarehouseSummaryDTO>('/pad/Index/GetSummary');
 export const SetLocationFull = (params) =>
   get<API.WarehouseSummaryDTO>('/pad/Index/SetLocationFull', params);
-
+export const GetRowUnbinding = (params) => get('/pad/Index/RowUnbinding', params);
+export const GetEmptyTrayOutApply = (params) => get('/pad/Index/EmptyTrayOutApply', params);
 export const GetLayerNavigation = () =>
   get<API.LayerNavigationDTO[]>('/pad/Index/GetLayerNavigation');
 
@@ -19,5 +20,7 @@ export const InStockApply = (params: API.getApiInvoiceHeaderInStockApplyParams) 
 
 export const CombineInStock = (params: API.getCombineInStockParams) =>
   get<API.TaskInfo>('/pad/Index/CombineInStock', params);
+
+export const BindingEmpty = (params) => post<API.TaskInfo>('/pad/Index/BindingEmpty', params);
 
 export const PadOutStockApply = (body: any) => post('/api/OpenApi/OutStockApply', body);

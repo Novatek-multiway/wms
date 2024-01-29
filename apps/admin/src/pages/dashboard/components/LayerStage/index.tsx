@@ -1,4 +1,11 @@
-import { memo, useCallback, useRef, ForwardRefRenderFunction, useImperativeHandle, forwardRef } from 'react';
+import {
+  memo,
+  useCallback,
+  useRef,
+  ForwardRefRenderFunction,
+  useImperativeHandle,
+  forwardRef,
+} from 'react';
 import { reset, setLocationId, setPosition, setVisible, useDispatch } from 'store';
 import { LayerStage } from 'ui';
 import useCanvasData from '../../hooks/useCanvasData';
@@ -24,15 +31,18 @@ export interface ILayerRef {
   toCenter: () => void;
 }
 
-const LayerS: ForwardRefRenderFunction<ILayerRef, IProps> = ({ konvaTitle, canvasData, size, activeStatusList, shouldDisplayText }, ref) => {
+const LayerS: ForwardRefRenderFunction<ILayerRef, IProps> = (
+  { konvaTitle, canvasData, size, activeStatusList, shouldDisplayText },
+  ref
+) => {
   const dispatch = useDispatch();
-  const stageRef = useRef<LayerStageRef>(null)
+  const stageRef = useRef<LayerStageRef>(null);
 
   const props = useCanvasData({
     canvasData,
     size,
     activeStatusList,
-    shouldDisplayText
+    shouldDisplayText,
   });
 
   const hide = useCallback(() => {
@@ -74,8 +84,12 @@ const LayerS: ForwardRefRenderFunction<ILayerRef, IProps> = ({ konvaTitle, canva
   };
 
   useImperativeHandle(ref, () => ({
-    toCenter: () => stageRef?.current?.toCenter({ x: props?.stageSize?.offsetX, y: props?.stageSize?.offsetY }, props?.stageSize?.scaleX)
-  }))
+    toCenter: () =>
+      stageRef?.current?.toCenter(
+        { x: props?.stageSize?.offsetX, y: props?.stageSize?.offsetY },
+        props?.stageSize?.scaleX
+      ),
+  }));
 
   return (
     <LayerStage
@@ -87,6 +101,6 @@ const LayerS: ForwardRefRenderFunction<ILayerRef, IProps> = ({ konvaTitle, canva
       onTapLocation={onTapLocation}
     />
   );
-}
+};
 
 export default memo(forwardRef(LayerS));

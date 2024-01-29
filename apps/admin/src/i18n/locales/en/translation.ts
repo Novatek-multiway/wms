@@ -227,4 +227,7 @@ export default {
   '总览-1层': 'Overview - 1 Layer',
   锁定: 'Lock',
   锁定成功: 'Lock Successful',
+  绑定空托: 'Bind empty container',
+  一键解绑: 'Unbind',
+  呼叫成功: 'Call Successful',
 };

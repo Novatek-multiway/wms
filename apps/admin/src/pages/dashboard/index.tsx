@@ -1,6 +1,13 @@
 import { useDebounceFn, useSize, useWebSocket } from 'ahooks';
 import { Divider, FloatButton, message as msg, Switch, Tree, notification } from 'antd';
-import { Get2DTileData, GetLayerNavigation, GetSummary, SetLocationFull } from 'apis';
+import {
+  Get2DTileData,
+  GetLayerNavigation,
+  GetSummary,
+  SetLocationFull,
+  GetRowUnbinding,
+  GetEmptyTrayOutApply,
+} from 'apis';
 import cx from 'classnames';
 import { shallowEqual, useAppDispatch, useAppSelector } from 'hooks';
 import { isEmpty } from 'lodash';
@@ -17,12 +24,14 @@ import InStockApplyDialog from './components/InStockApplyDialog';
 import LayerStage, { ILayerRef } from './components/LayerStage';
 import LocationDetailDialog from './components/LocationDetailDialog';
 import MoveContainerDialog from './components/MoveContainerDialog';
+import BindingEmptyDialog from './components/BindingEmpty';
 // import UnbindingDialog from './components/UnbindingDialog';
 import { locationStatusMap } from './constants';
 import styles from './style.module.scss';
 
 import type { API } from 'apis';
 import UnbindingModal from './components/UnbindingModal';
+import BindingEmpty from './components/BindingEmpty';
 // import CombineEmptyTrayDialog from './components/CombineEmptyTrayDialog';
 // import OutStockApplyDialog from './components/OutStockApplyDialog';
 
@@ -230,6 +239,33 @@ export default function DashBoard() {
           </li>
           <li className={styles.operationItem}>
             <MoveContainerDialog locationId={locationId} refresh={initData} />
+          </li>
+          <li className={styles.operationItem}>
+            <BindingEmptyDialog locationId={locationId} refresh={initData} />
+          </li>
+          <li
+            className={styles.operationItem}
+            onClick={() => {
+              GetRowUnbinding({ locationId: locationId }).then((res) => {
+                const { resultData } = res;
+                resultData && msg.success(t('解绑成功'));
+                run2D();
+              });
+            }}
+          >
+            {t('一键解绑')}
+          </li>
+          <li
+            className={styles.operationItem}
+            onClick={() => {
+              GetEmptyTrayOutApply({ locationId }).then((res) => {
+                const { resultData } = res;
+                resultData && msg.success(t('呼叫成功'));
+                run2D();
+              });
+            }}
+          >
+            {t('呼叫空托')}
           </li>
           {/* <li className={styles.operationItem}>
             <CombineEmptyTrayDialog locationId={locationId} refresh={initData} />

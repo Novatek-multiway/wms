@@ -182,10 +182,20 @@ function useCanvasData({ canvasData, size, activeStatusList, shouldDisplayText }
         };
       }
     });
+    console.log(locationList);
 
     locationList?.forEach((location) => {
-      const { xaxis, yaxis, id, canvasColumn, canvasRow, canvasAreaId, isColumn, locationStatus } =
-        location;
+      const {
+        xaxis,
+        yaxis,
+        id,
+        canvasColumn,
+        canvasRow,
+        canvasAreaId,
+        isColumn,
+        locationStatus,
+        customCode,
+      } = location;
       const calcLen = baseLength - CALC_SZIE;
       const rect: Konva.RectConfig = {
         width: isColumn ? calcLen : baseLength,
@@ -204,12 +214,22 @@ function useCanvasData({ canvasData, size, activeStatusList, shouldDisplayText }
       let rowText: null | Konva.TextConfig = null;
       let colText: null | Konva.TextConfig = null;
 
+      let locationText = null as null | Konva.TextConfig;
+
       if (canvasAreaId && shelfListMap?.[canvasAreaId]) {
         const { fromXaxis, fromYaxis } = shelfListMap[canvasAreaId];
         const m = yaxis! - fromYaxis!,
           n = xaxis! - fromXaxis!;
         rect.x = n * baseLength;
         rect.y = m * baseLength;
+
+        locationText = {
+          text: customCode,
+          x: rect.x + 10, // 随缘调整
+          y: rect.y + 15, // 随缘调整
+          fill: '#020617',
+          fontSize: 16,
+        };
         if (m === 0) {
           colText = {
             text: t('{{canvasColumn}}列', { canvasColumn }),
@@ -217,7 +237,7 @@ function useCanvasData({ canvasData, size, activeStatusList, shouldDisplayText }
             y: rect.y - 15, // 随缘调整
             fill: '#020617',
             fontSize: 16,
-            visible: shouldDisplayText
+            visible: shouldDisplayText,
           };
         }
         if (n === 0) {
@@ -227,14 +247,16 @@ function useCanvasData({ canvasData, size, activeStatusList, shouldDisplayText }
             y: rect.y + 15, // 随缘调整
             fill: '#020617',
             fontSize: 16,
-            visible: shouldDisplayText
+            visible: shouldDisplayText,
           };
         }
+
         shelfListMap[canvasAreaId].locationMatrix[m][n] = {
           rect,
           group,
           rowText,
           colText,
+          locationText,
           ...location,
         };
       }
@@ -260,7 +282,7 @@ function useCanvasData({ canvasData, size, activeStatusList, shouldDisplayText }
         offsetX,
         offsetY,
         scaleX: scale,
-        scaleY: scale
+        scaleY: scale,
       },
     };
   }, [canvasData, size, activeStatusList, curLocationId, shouldDisplayText]);

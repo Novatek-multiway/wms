@@ -22,8 +22,8 @@ export async function getPadContainerInventoryEmptyTrayOutApply(
 }
 
 /** 获取容器类型选项数据 GET /pad/ContainerInventory/GetContainerTypeList */
-export async function getPadContainerInventoryGetContainerTypeList() {
-  return get<API.SelectItem[]>('/pad/ContainerInventory/GetContainerTypeList');
+export async function getPadContainerInventoryGetContainerTypeList(params) {
+  return get<API.SelectItem[]>('/pad/ContainerInventory/GetContainerTypeList', params);
 }
 
 /** 获取所有容器选项数据 GET /pad/ContainerInventory/GetAllContainerSelectItem */
