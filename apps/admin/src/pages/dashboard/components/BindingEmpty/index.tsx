@@ -6,6 +6,7 @@ import {
   // InStockApply,
   postApiMaterialGetPageData,
 } from 'apis';
+
 import { useAppDispatch } from 'hooks';
 import { last, pick } from 'lodash';
 import { MwDialog } from 'multiway';
@@ -24,6 +25,7 @@ import { reset } from 'store';
 import useLocationCodeOptions from '@/common/hooks/useLocationCodeOptions';
 import useContainerTypeList from '@/common/hooks/useContainerTypeList';
 import { OptionItem } from '@/common/hooks/useEnumOptions';
+import ScannerSelect from '@/components/ScannerSelect';
 interface IProps {
   locationId: string;
   refresh: () => void;
@@ -112,6 +114,18 @@ function BindingEmptyDialog({ locationId, refresh }: IProps) {
           style={{ maxWidth: 600 }}
           autoComplete="off"
         >
+          <Form.Item
+            label={t('绑定位置')}
+            name="fromLocationCode"
+            rules={[{ required: true, message: t('必填') }]}
+          >
+            <ScannerCascader
+              options={locationOptions}
+              placeholder={t('默认选中库位编号，可以改，也可以扫码')}
+              scannerKey={SCANNER_DASHBOARD_INSTOCK_LOCATION}
+              disabled
+            />
+          </Form.Item>
           <Form.Item label={t('托盘类型')} name="containerTypeId">
             <Select>
               {containerCodeOptions.map((item) => (

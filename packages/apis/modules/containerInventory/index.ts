@@ -26,6 +26,9 @@ export async function getPadContainerInventoryGetContainerTypeList(params) {
   return get<API.SelectItem[]>('/pad/ContainerInventory/GetContainerTypeList', params);
 }
 
+export async function GetContainerTypeList(params) {
+  return get<API.SelectItem[]>('/pad/Index/GetContainerTypeList', params);
+}
 /** 获取所有容器选项数据 GET /pad/ContainerInventory/GetAllContainerSelectItem */
 export async function getPadContainerInventoryGetAllContainerSelectItem() {
   return get<API.SelectItem[]>('/pad/ContainerInventory/GetAllContainerSelectItem');

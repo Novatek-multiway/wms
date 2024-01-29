@@ -196,6 +196,8 @@ function useCanvasData({ canvasData, size, activeStatusList, shouldDisplayText }
         locationStatus,
         customCode,
       } = location;
+      console.log(location);
+
       const calcLen = baseLength - CALC_SZIE;
       const rect: Konva.RectConfig = {
         width: isColumn ? calcLen : baseLength,

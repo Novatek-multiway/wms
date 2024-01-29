@@ -75,23 +75,12 @@ export default function DashBoard() {
     ['WarehouseMapNotify', run2D],
   ]);
 
-  useWebSocket(`ws://120.79.8.215:7228/notify?client=${CLIENT}&key=${timer}`, {
-    onMessage(message, instance) {
-      const data = message?.data ?? '{}';
-      const new_data = JSON.parse(data);
-      const messageType = new_data.MessageType as 'SummaryNotify' | 'WarehouseMapNotify';
-      if (APIList.has(messageType)) {
-        APIList.get(messageType)?.();
-      }
-    },
-  });
   useWebSocket(`ws://${import.meta.env.VITE_APP_BASE_API}/notify?client=${CLIENT}&key=${timer}`, {
     onMessage(message, instance) {
       const data = message?.data ?? '{}';
       const new_data = JSON.parse(data);
       const msgList = JSON.parse(new_data.Message);
-      console.log(msgList);
-
+      notification.destroy();
       if (msgList.length > 0) {
         msgList.forEach((item: any) => {
           notification.error({
@@ -100,6 +89,10 @@ export default function DashBoard() {
             duration: null,
           });
         });
+      }
+      const messageType = new_data.MessageType as 'SummaryNotify' | 'WarehouseMapNotify';
+      if (APIList.has(messageType)) {
+        APIList.get(messageType)?.();
       }
     },
   });
