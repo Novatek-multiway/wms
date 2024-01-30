@@ -10,8 +10,8 @@ export default function useContainerTypeList(manual: boolean) {
     () =>
       (data?.resultData ?? []).map((item) => ({
         ...item,
-        value: item.itemValue,
-        label: item.itemName!,
+        value: item.id,
+        label: item.name!,
       })),
     [data]
   );

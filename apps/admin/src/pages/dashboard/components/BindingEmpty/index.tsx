@@ -23,7 +23,7 @@ import ScannerCascader from '@/components/ScannerCascader';
 import type { API } from 'apis';
 import { reset } from 'store';
 import useLocationCodeOptions from '@/common/hooks/useLocationCodeOptions';
-import useContainerTypeList from '@/common/hooks/useContainerTypeList';
+import usePadContainerTypeList from '@/common/hooks/usePadContainerTypeList';
 import { OptionItem } from '@/common/hooks/useEnumOptions';
 import ScannerSelect from '@/components/ScannerSelect';
 interface IProps {
@@ -40,7 +40,7 @@ function BindingEmptyDialog({ locationId, refresh }: IProps) {
   const dispatch = useAppDispatch();
   const [visible, setVisible] = useState<boolean>(false);
   const [form] = Form.useForm<FormFields>();
-  const { options: containerCodeOptions, run: loadContainer } = useContainerTypeList(false);
+  const { options: containerCodeOptions, run: loadContainer } = usePadContainerTypeList(false);
   const { locationCodeOptions: locationOptions, load } = useLocationCodeOptions('itemValue', false);
   const [materialOptions, setMaterialOptions] = useState<OptionItem[]>([]);
 
