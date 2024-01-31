@@ -29,7 +29,7 @@ import { getToken } from "@/utils/token";
 
 const noNewTab = ["/login"]; // 不需要新建 tab的页面
 
-const CLIENT = 'pc'
+const CLIENT = "pc";
 const timer = new Date().getTime();
 
 interface PanesItemProps {
@@ -41,7 +41,7 @@ interface PanesItemProps {
 }
 function LayoutConfig() {
 	const { configStore } = useStore();
-	const token = getToken('AuthenticationToken');
+	const token = getToken("AuthenticationToken");
 	const { pathname, search } = useLocation();
 	const pathRef: RefType = useRef<string>("");
 	const outlet = useOutlet();
@@ -60,7 +60,10 @@ function LayoutConfig() {
 	const [collapsed, setCollapsed] = useState(false); // 菜单栏收起状态
 	const [visible, setVisible] = useState(false); // Drawer状态
 	const [width, setWidth] = useState(window.innerWidth); // 窗口宽度
-	const { webSocketIns, readyState } = useWebSocket(`ws://120.79.8.215:7228/notify?client=${CLIENT}&key=${timer}`);
+	const { webSocketIns, readyState } = useWebSocket(
+		`ws://${import.meta.env.VITE_APP_BASE_API}/notify?client=${CLIENT}&key=${timer}`
+	);
+
 	const toggle = () => {
 		if (width > 650) setCollapsed(!collapsed);
 		configStore.setCollapsed(String(!collapsed));
