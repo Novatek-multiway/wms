@@ -230,4 +230,6 @@ export default {
   绑定空托: 'Bind empty container',
   一键解绑: 'Unbind',
   呼叫成功: 'Call Successful',
+  绑定位置: 'Binding location',
+  托盘类型: 'Container type',
 };
