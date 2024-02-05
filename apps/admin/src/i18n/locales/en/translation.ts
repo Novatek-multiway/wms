@@ -232,4 +232,5 @@ export default {
   呼叫成功: 'Call Successful',
   绑定位置: 'Binding location',
   托盘类型: 'Container type',
+  车辆: 'Vehicle',
 };
